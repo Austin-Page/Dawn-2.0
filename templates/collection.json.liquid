@@ -12,6 +12,7 @@
 						{% for varient in product.varients %}
 							{
                               "id" : {{ varient.id }},
+							  "title" : "{{variant.title}}",
                               "option1" : "{{ varient.option1 }}",
                               "option2" : "{{ varient.option2 }}",
                               "option3" : "{{ varient.option3 }}"
