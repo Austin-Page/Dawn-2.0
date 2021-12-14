@@ -5,14 +5,14 @@
 			{% if filter.min_value.value %}
 				{% assign collection_price_min = filter.min_value.value | money_without_currency | replace: ',' %}
 			{% else %}
-				{%assign collection_price_min = 0 %}
+				{% assign collection_price_min = 0 %}
 			{% endif %}
 	{% if filter.max_value.value %}
 		{% assign collection_price_max = filter.max_value.value | money_without_currency | ceil | replace: ',' %}
-			{% else%}
+			{% else %}
 		{% assign collection_price_max = filter.range_max | money_without_currency | ceil | replace: ',',''%}
 			{% endif%}
-		{% endif%}
+			{% endif%}
 		{%- endfor -%}
 
 <div id="app">
@@ -41,9 +41,7 @@
                >
          
          </div>
-      </div>
-    
-          <div class="filter-group-display__submit">
+    		<div class="filter-group-display__submit">
             <button @click="grabCollection()">Apply</button>
             </div>
     
