@@ -1,0 +1,20 @@
+{
+	"title": "{{ collection.title }}",
+	"description" : "{{ collection.description }}",
+	"products" : [
+		{% for product in collection.products %}
+			{
+
+				"title" : "{{ product.title }}",
+				"varients" : [
+						{% for varient in product.varients %}
+							"id" : {{ varient.id }},
+							"option1" : "{{ varient.option1 }}"
+							"option2" : "{{ varient.option2 }}",
+							"option3" : "{{ varient.option3 }}",
+					{% endfor %}
+				]
+			}
+		{% endfor %}
+	]
+}
