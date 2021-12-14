@@ -8,8 +8,8 @@
 			{
 
 				"title" : "{{ product.title }}",
-				"price_min" :{{ product.price_min | money_without_trailing_zeros }},
-				"price_max" :{{ product.price_max | money_without_trailing_zeros }},
+				"price_min" :"{{ product.price_min | money_without_trailing_zeros }}",
+				"price_max" :"{{ product.price_max | money_without_trailing_zeros }}",
 				"varients" : [
 						{% for varient in product.varients %}
 							{
