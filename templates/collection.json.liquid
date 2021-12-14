@@ -15,10 +15,14 @@
                               "option1" : "{{ varient.option1 }}",
                               "option2" : "{{ varient.option2 }}",
                               "option3" : "{{ varient.option3 }}"
-							},
+	
+							}
+						{% unless forloop.last %},{% endunless %}
+
 					{% endfor %}
 				]
-			},
+			}
+		{% unless forloop.last %},{% endunless %}
 		{% endfor %}
 	]
 }
