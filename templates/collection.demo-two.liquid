@@ -21,7 +21,7 @@
     collection: null
   		}
   	},
-      method: {
+      methods: {
         grabCollection() {
           fetch('https://dev-help55642.myshopify.com/collections/{{collection.handle}}?view=json')
           	.then(response => response.json())
