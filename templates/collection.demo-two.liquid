@@ -5,6 +5,8 @@
     <h1 v-html="collection.title"></h1>
     <div v-for="product in collection.products">
     <h2 v-html="product.title"></h2>
+      <div v-if="product.price_min == product.price_max" v-html="product.price_min"></div>
+        <div v-else v-html="product.price_min + ' _ ' + product.price_max"></div>
 	</div>
   </template>
 </div>
