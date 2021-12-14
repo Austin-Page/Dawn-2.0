@@ -25,12 +25,12 @@
         grabCollection() {
           fetch('https://dev-help55642.myshopify.com/collections/{{collection.handle}}?view=json')
           	.then(response => response.json())
-          	.then(data => console.log(data => this.collection = data));
+          	.then(data => this.collection = data);
 		}
       },
         mounted() {
             this.grabCollection();
          }
   }  
-        const CollectionApp = vue.createApp(options).mount('#app');
+        const CollectionApp = Vue.createApp(options).mount('#app');
 </script>
