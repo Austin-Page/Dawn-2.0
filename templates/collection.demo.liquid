@@ -2,6 +2,11 @@
 
 <div id="app">
   
+  <h1 v-html="collection.title"></h1>
+  <div v-for="product in collection.products"></div>
+  <h2 v-html="product.title"></h2>
+  <div v-for="variant in product.variants"></div>
+  		<button v-html="variant.title"></button>
 </div>
 
 <script src="https://unpkg.com/vue@next"></script>
