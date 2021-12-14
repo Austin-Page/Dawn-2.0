@@ -2,6 +2,25 @@
 
 <div id="app">
   <div class="container">
+    
+     <div class="filter-group-display__price-range">
+       <div class="filter-group-display__price-range-from">
+         <label>From</label>
+         <span>{{ cart.currency.symbol }}</span>
+
+         <input 
+                type="number"
+                placeholder="0"
+                min="0"
+                >
+         
+         </div>
+            </div>
+
+            <div class="filter-group-display__submit">
+              <input type="submit" value="Apply">
+            </div>
+    
   <template v-if="collection">
     <h1 v-html="collection.title"></h1>
     <div class="card-container">
