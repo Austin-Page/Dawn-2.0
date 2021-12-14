@@ -1,5 +1,20 @@
 {% layout none %}
 
+{%- for filter in collection.filters -%}
+	{%if filter.type == 'price_range'%}
+			{% if filter.min_value.value %}
+				{% assign collection_price_min = filter.min_value.value | money_without_currency | replace: ',' %}
+			{% else %}
+				{%assign collection_price_min = 0 %}
+			{% endif %}
+	{% if filter.max_value.value %}
+		{% assign collection_price_max = filter.max_value.value | money_without_currency | ceil | replace: ',' %}
+			{% else%}
+		{% assign collection_price_max = filter.range_max | money_without_currency | ceil | replace: ',',''%}
+			{% endif%}
+		{% endif%}
+		{%- endfor -%}
+
 <div id="app">
   <div class="container">
     <h2> Filter via price</h2>
@@ -41,7 +56,11 @@
     name: "Collection App",
     data() {
     	return {
-    collection: null
+    collection: null,
+          price_filter: {
+            min: {{ collection_price_min }},
+            max: {{collection_price_max }}
+          }
   		}
   	},
       methods: {
