@@ -41,8 +41,10 @@
                >
          
          </div>
+    		</div>
+    		
     		<div class="filter-group-display__submit">
-            <button @click="grabCollection()">Apply</button>
+            	<button @click="grabCollection()">Apply</button>
             </div>
     
     	
@@ -52,10 +54,11 @@
     	<div class="card" v-for="product in collection.products">
     		<h2 class="card-header" v-html="product.title"></h2>
       		<div class="card-body" v-if="product.price_min == product.price_max" v-html="product.price_min"></div>
-        	<div class="card-body" v-else v-html="product.price_min + ' _ ' + product.price_max"></div>
+        	<div class="card-body" v-else v-html="product.price_min + ' - ' + product.price_max"></div>
 		</div>
     </div>
   </template>
+</div>
 </div>
 
 <script src="https://unpkg.com/vue@next"></script>
@@ -65,10 +68,10 @@
     name: "Collection App",
     data() {
     	return {
-    collection: null,
-          price_filter: {
-            min: {{ collection_price_min }},
-            max: {{collection_price_max }}
+    		collection: null,
+          	price_filter: {
+            	min: {{ collection_price_min }},
+            	max: {{collection_price_max }}
           }
   		}
   	},
