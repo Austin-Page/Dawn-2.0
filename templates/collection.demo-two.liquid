@@ -76,7 +76,10 @@
   	},
       methods: {
         grabCollection() {
-          fetch('https://dev-help55642.myshopify.com/collections/{{collection.handle}}?view=json')
+          let url = 'https://dev-help55642.myshopify.com/collections/{{collection.handle}}?view=json'';
+          if(this.price_filter.min > {{ collection_price_min }}) url += "?filter.v.price.gte=" +this.price_filter.min;
+          if(this.price.filter.max < {{ collection_price_max }}) url += "?filter.v.price.lte=" +this.price_filter.max;
+              fetch(url)
           	.then(response => response.json())
           	.then(data => this.collection = data);
 		}
